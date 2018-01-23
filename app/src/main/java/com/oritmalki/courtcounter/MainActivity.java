@@ -25,28 +25,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        scoreViewA = (TextView) findViewById(R.id.team_a_score);
-        scoreViewB = (TextView) findViewById(R.id.team_b_score);
-        threePointsA = (Button) findViewById(R.id.threePoints_A);
-//        threePointsA.setOnClickListener(this);
-//        threePointsB = (Button) findViewById(R.id.threePoints_B);
-//        threePointsB.setOnClickListener(this);
-//        twoPointsA = (Button) findViewById(R.id.twoPoints_A);
-//        twoPointsA.setOnClickListener(this);
-//        twoPointsB = (Button) findViewById(R.id.twoPoints_B);
-//        twoPointsB.setOnClickListener(this);
-//        freeThrowA = (Button) findViewById(R.id.freeThrow_A);
-//        freeThrowA.setOnClickListener(this);
-//        freeThrowB = (Button) findViewById(R.id.freeThrow_B);
-//        freeThrowB.setOnClickListener(this);
-//        reset = (Button) findViewById(R.id.reset_button);
-//        reset.setOnClickListener(this);
+        scoreViewA = findViewById(R.id.team_a_score);
+        scoreViewB = findViewById(R.id.team_b_score);
+        threePointsA = findViewById(R.id.threePoints_A);
+        threePointsA.setOnClickListener(this);
+        threePointsB = findViewById(R.id.threePoints_B);
+        threePointsB.setOnClickListener(this);
+        twoPointsA = findViewById(R.id.twoPoints_A);
+        twoPointsA.setOnClickListener(this);
+        twoPointsB = findViewById(R.id.twoPoints_B);
+        twoPointsB.setOnClickListener(this);
+        freeThrowA = findViewById(R.id.freeThrow_A);
+        freeThrowA.setOnClickListener(this);
+        freeThrowB = findViewById(R.id.freeThrow_B);
+        freeThrowB.setOnClickListener(this);
+        reset = findViewById(R.id.reset_button);
+        reset.setOnClickListener(this);
 
-        scoreA = 0;
-        scoreB = 2;
         displayForTeam(scoreViewA, scoreA);
         displayForTeam(scoreViewB, scoreB);
-
 
 
 
@@ -56,58 +53,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.threePoints_A:
-                addThreePoints(scoreA);
-                displayForTeam(scoreViewA, scoreA);
+                addPointsTeamA(scoreViewA, 3, "scoreA");
                 break;
             case R.id.threePoints_B:
-                addThreePoints(scoreB);
-                displayForTeam(scoreViewB, scoreB);
+                addPointsTeamA(scoreViewB, 3, "scoreB");
                 break;
             case R.id.twoPoints_A:
-                addTwoPoints(scoreA);
-                displayForTeam(scoreViewA, scoreA);
+                addPointsTeamA(scoreViewA, 2, "scoreA");
                 break;
             case R.id.twoPoints_B:
-                addTwoPoints(scoreB);
-                displayForTeam(scoreViewB, scoreB);
+                addPointsTeamA(scoreViewB, 2, "scoreB");
+                break;
             case R.id.freeThrow_A:
-                addOnePoint(scoreA);
-                displayForTeam(scoreViewA, scoreA);
+                addPointsTeamA(scoreViewA, 1, "scoreA");
                 break;
             case R.id.freeThrow_B:
-                addOnePoint(scoreB);
-                displayForTeam(scoreViewB, scoreB);
+                addPointsTeamA(scoreViewB, 1, "scoreB");
                 break;
             case R.id.reset_button:
                 reset();
                 displayForTeam(scoreViewA, scoreA);
                 displayForTeam(scoreViewB, scoreB);
+                break;
 
         }
     }
 
 
+    public void addPointsTeamA(TextView scoreView, int points, String teamScore) {
+
+        switch (teamScore) {
+            case "scoreA":
+
+                scoreA = Integer.parseInt((String) scoreView.getText()) + points;
+                displayForTeam(scoreView, scoreA);
+                break;
+
+            case "scoreB":
+                scoreB = Integer.parseInt((String) scoreView.getText()) + points;
+                displayForTeam(scoreView, scoreB);
+                break;
+
+        }
+
+    }
 
     public void displayForTeam(TextView scoreView, int score) {
-
         scoreView.setText(String.valueOf(score));
     }
 
-    public void addThreePoints(int score) {
-        score += 3;
-    }
 
-    public void addTwoPoints(int score) {
-        score += 2;
-    }
-
-    public void addOnePoint(int score) {
-        score++;
-    }
 
     public void reset() {
         scoreA = 0;
-        scoreB =0;
+        scoreB = 0;
     }
+
 
 }
