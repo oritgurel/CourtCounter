@@ -25,27 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        scoreViewA = findViewById(R.id.team_a_score);
-        scoreViewB = findViewById(R.id.team_b_score);
-        threePointsA = findViewById(R.id.threePoints_A);
-        threePointsA.setOnClickListener(this);
-        threePointsB = findViewById(R.id.threePoints_B);
-        threePointsB.setOnClickListener(this);
-        twoPointsA = findViewById(R.id.twoPoints_A);
-        twoPointsA.setOnClickListener(this);
-        twoPointsB = findViewById(R.id.twoPoints_B);
-        twoPointsB.setOnClickListener(this);
-        freeThrowA = findViewById(R.id.freeThrow_A);
-        freeThrowA.setOnClickListener(this);
-        freeThrowB = findViewById(R.id.freeThrow_B);
-        freeThrowB.setOnClickListener(this);
-        reset = findViewById(R.id.reset_button);
-        reset.setOnClickListener(this);
-
-        displayForTeam(scoreViewA, scoreA);
-        displayForTeam(scoreViewB, scoreB);
-
-
+        initialViews();
 
     }
 
@@ -107,6 +87,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void reset() {
         scoreA = 0;
         scoreB = 0;
+    }
+
+    public void initialViews() {
+
+        scoreViewA = findViewById(R.id.team_a_score);
+        scoreViewB = findViewById(R.id.team_b_score);
+        threePointsA = findViewById(R.id.threePoints_A);
+        threePointsA.setOnClickListener(this);
+        threePointsB = findViewById(R.id.threePoints_B);
+        threePointsB.setOnClickListener(this);
+        twoPointsA = findViewById(R.id.twoPoints_A);
+        twoPointsA.setOnClickListener(this);
+        twoPointsB = findViewById(R.id.twoPoints_B);
+        twoPointsB.setOnClickListener(this);
+        freeThrowA = findViewById(R.id.freeThrow_A);
+        freeThrowA.setOnClickListener(this);
+        freeThrowB = findViewById(R.id.freeThrow_B);
+        freeThrowB.setOnClickListener(this);
+        reset = findViewById(R.id.reset_button);
+        reset.setOnClickListener(this);
+
+        displayForTeam(scoreViewA, scoreA);
+        displayForTeam(scoreViewB, scoreB);
+
     }
 
 
