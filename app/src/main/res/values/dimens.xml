@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="teamSize">14sp</dimen>
-    <dimen name="scoreSize">56sp</dimen>
+    <dimen name="scoreSize">46sp</dimen>
 </resources>

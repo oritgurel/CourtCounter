@@ -2,10 +2,13 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/rps_background2"
+    >
 
 <LinearLayout
 
+    android:id="@+id/action_container"
     android:layout_width="match_parent"
     android:layout_height="350dp"
     android:orientation="horizontal"
@@ -42,6 +45,7 @@
     </TextView>
     <Button
         android:id="@+id/threePoints_A"
+        android:drawableLeft="@drawable/scissors_win_small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="24dp"
@@ -51,6 +55,7 @@
 
     <Button
         android:id="@+id/twoPoints_A"
+        android:drawableLeft="@drawable/paper_win_small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="24dp"
@@ -60,6 +65,7 @@
 
     <Button
         android:id="@+id/freeThrow_A"
+        android:drawableLeft="@drawable/rock_win_small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="24dp"
@@ -69,6 +75,7 @@
 </LinearLayout>
 
     <View
+        android:id="@+id/separator"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:padding="20dp"
@@ -106,6 +113,7 @@
 
         <Button
             android:id="@+id/threePoints_B"
+            android:drawableLeft="@drawable/scissors_win_small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="24dp"
@@ -115,6 +123,7 @@
 
         <Button
             android:id="@+id/twoPoints_B"
+            android:drawableLeft="@drawable/paper_win_small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="24dp"
@@ -124,6 +133,7 @@
 
         <Button
             android:id="@+id/freeThrow_B"
+            android:drawableLeft="@drawable/rock_win_small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="24dp"
@@ -140,9 +150,9 @@
     android:text="@string/Reset"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
+    android:layout_below="@id/action_container"
     android:layout_centerHorizontal="true"
-    android:layout_margin="32dp"
+    android:layout_marginTop="-38dp"
         />
 
 </RelativeLayout>
