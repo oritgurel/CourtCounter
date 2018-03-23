@@ -152,14 +152,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-        if (Integer.parseInt(s.toString()) >= 30) {
+        if (Integer.parseInt(s.toString()) >= 15) {
 
-            if (Integer.parseInt(scoreViewA.getText().toString()) >=30) {
+            if (Integer.parseInt(scoreViewA.getText().toString()) >=15) {
                 winA.setVisibility(View.VISIBLE);
                 Toast.makeText(this, "We got a Winner!",Toast.LENGTH_LONG).show();
 
             }
-            else if (Integer.parseInt(scoreViewB.getText().toString()) >=30) {
+            else if (Integer.parseInt(scoreViewB.getText().toString()) >=15) {
                 winB.setVisibility(View.VISIBLE);
                 Toast.makeText(this, "We got a Winner!",Toast.LENGTH_LONG).show();
 
