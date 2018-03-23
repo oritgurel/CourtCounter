@@ -3,7 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorAppBar">#ff9800</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorButtonNormal">#ff9800</color>
+    <color name="colorButtonNormal">#ffc107</color>
     <color name="colorScore">#000000</color>
     <color name="team">#616161</color>
 </resources>
